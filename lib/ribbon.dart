@@ -16,31 +16,31 @@ enum RibbonLocation {
 }
 
 class Ribbon extends StatelessWidget {
-  final double? nearLength;
-  final double? farLength;
-  final String? title;
+  final double nearLength;
+  final double farLength;
+  final String title;
   final Color? color;
   final TextStyle? titleStyle;
   final RibbonLocation? location;
   final Widget? child;
-  const Ribbon(
-      {Key? key,
-      @required this.nearLength,
-      @required this.farLength,
-      @required this.title,
-      this.titleStyle = _kTextStyle,
-      this.color = Colors.white,
-      this.location = RibbonLocation.topStart,
-      this.child})
-      : super(key: key);
+  const Ribbon({
+    Key? key,
+    required this.nearLength,
+    required this.farLength,
+    required this.title,
+    this.titleStyle = _kTextStyle,
+    this.color = Colors.white,
+    this.location = RibbonLocation.topStart,
+    this.child,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return CustomPaint(
         foregroundPainter: _RibbonPainter(
-          nearLength: nearLength!,
-          farLength: farLength!,
-          title: title!,
+          nearLength: nearLength,
+          farLength: farLength,
+          title: title,
           titleStyle: titleStyle!,
           color: color!,
           location: location!,
