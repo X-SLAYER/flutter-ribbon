@@ -25,7 +25,7 @@ class _DemoPageState extends State<DemoPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Ribbon Demo'),
+        title: Text('Ribbon Plus Demo'),
       ),
       body: Center(
         child: Column(mainAxisAlignment: MainAxisAlignment.center,
@@ -44,7 +44,7 @@ class _DemoPageState extends State<DemoPage> {
                 child: Container(
                     width: 300,
                     height: 160,
-                    color:Colors.blueAccent,
+                    color: Colors.blueAccent,
                     child: Center(
                         child: Text(
                       'hello ribbon',
@@ -122,9 +122,9 @@ class _DemoPageState extends State<DemoPage> {
         Radio<RibbonLocation>(
             value: value,
             groupValue: location,
-            onChanged: (RibbonLocation value) {
+            onChanged: (RibbonLocation? value) {
               setState(() {
-                location = value;
+                location = value!;
               });
             }),
       ],
